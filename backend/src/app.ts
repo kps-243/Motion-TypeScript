@@ -3,6 +3,7 @@ import userRoutes from "./routes/user.routes";
 import gymRoutes from "./routes/gym.routes";
 import gymEquipmentRoutes from "./routes/gymEquipment.routes";
 import practiceRoutes from "./routes/practice.routes";
+import challengeRoutes from "./routes/challenge.routes";
 
 const app = express();
 
@@ -31,5 +32,8 @@ app.use("/api/gyms/:gymId/equipments", gymEquipmentRoutes);
 
 // Practices
 app.use("/api/practices", practiceRoutes);
+
+// Challenges
+app.use("/api/challenges", challengeRoutes);
 
 export default app;

@@ -10,6 +10,12 @@ declare module "express-serve-static-core" {
     auth?: AuthPayload;
   }
 }
+export interface AuthRequest extends Request {
+  auth?: {
+    userId: string;
+    role?: string;
+  };
+}
 
 declare namespace Express {
   interface Request {
