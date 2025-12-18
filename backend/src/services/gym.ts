@@ -1,4 +1,4 @@
-import Gym, { IGym } from "../models/gym";
+import Gym, { IGym } from "../models/Gym";
 
 /**
  * Créer une salle

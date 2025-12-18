@@ -10,3 +10,13 @@ declare module "express-serve-static-core" {
     auth?: AuthPayload;
   }
 }
+
+declare namespace Express {
+  interface Request {
+    auth?: {
+      userId: string;
+      role: string;
+    };
+  }
+}
+
