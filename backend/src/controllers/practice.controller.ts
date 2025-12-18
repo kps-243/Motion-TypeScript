@@ -3,7 +3,7 @@ import * as practiceService from "../services/practice";
 import { Types } from "mongoose";
 
 
-// CREATE
+
 export const createPractice = async (req: Request, res: Response) => {
   try {
     const data = {
@@ -18,7 +18,7 @@ export const createPractice = async (req: Request, res: Response) => {
   }
 };
 
-// GET ALL
+
 export const getAllPractices = async (req: Request, res: Response) => {
   try {
     const practices = await practiceService.getAllPractices();
@@ -30,7 +30,6 @@ export const getAllPractices = async (req: Request, res: Response) => {
 };
 
 
-// GET ONE
 export const getOnePractice = async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
@@ -49,7 +48,6 @@ export const getOnePractice = async (req: Request, res: Response) => {
   }
 };
 
-// UPDATE
 export const modifyPractice = async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
@@ -69,7 +67,6 @@ export const modifyPractice = async (req: Request, res: Response) => {
 };
 
 
-// DELETE
 export const deletePractice = async (req: Request, res: Response) => {
   try {
     const { id } = req.params;

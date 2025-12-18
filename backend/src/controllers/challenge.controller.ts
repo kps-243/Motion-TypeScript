@@ -2,9 +2,7 @@ import { Request, Response } from "express";
 import * as challengeService from "../services/challenge";
 import { Types } from "mongoose";
 
-/**
- * Créer un challenge
- */
+
 export const createChallenge = async (req: Request, res: Response) => {
   try {
     const challenge = await challengeService.createChallenge({
@@ -18,9 +16,7 @@ export const createChallenge = async (req: Request, res: Response) => {
   }
 };
 
-/**
- * Récupérer tous les challenges
- */
+
 export const getAllChallenges = async (_req: Request, res: Response) => {
   try {
     const challenges = await challengeService.getAllChallenges();
@@ -30,9 +26,7 @@ export const getAllChallenges = async (_req: Request, res: Response) => {
   }
 };
 
-/**
- * Récupérer un challenge
- */
+
 export const getOneChallenge = async (req: Request, res: Response) => {
   try {
     const { id } = req.params;

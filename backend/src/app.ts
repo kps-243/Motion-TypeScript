@@ -1,9 +1,13 @@
 import express, { Request, Response, NextFunction } from "express";
+
 import userRoutes from "./routes/user.routes";
 import gymRoutes from "./routes/gym.routes";
 import gymEquipmentRoutes from "./routes/gymEquipment.routes";
 import practiceRoutes from "./routes/practice.routes";
 import challengeRoutes from "./routes/challenge.routes";
+import equipmentRoutes from "./routes/equipment.routes";
+import badgeRoutes from "./routes/badge.routes";
+import leaderboardRoutes from "./routes/leaderboard.routes";
 
 const app = express();
 
@@ -35,5 +39,14 @@ app.use("/api/practices", practiceRoutes);
 
 // Challenges
 app.use("/api/challenges", challengeRoutes);
+
+// Equipments
+app.use("/api/equipments", equipmentRoutes);
+
+// Badges
+app.use("/api/badges", badgeRoutes);
+
+// Leaderboard
+app.use("/api/leaderboard", leaderboardRoutes);
 
 export default app;

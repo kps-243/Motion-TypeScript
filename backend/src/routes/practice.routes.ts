@@ -6,7 +6,6 @@ import ROLES from "../config/roles";
 
 const router = Router();
 
-// CREATE
 router.post(
   "/",
   auth,
@@ -14,13 +13,10 @@ router.post(
   practiceCtrl.createPractice
 );
 
-// GET ALL
 router.get("/", practiceCtrl.getAllPractices);
 
-// GET ONE
 router.get("/:id", practiceCtrl.getOnePractice);
 
-// UPDATE
 router.put(
   "/:id",
   auth,
@@ -28,7 +24,6 @@ router.put(
   practiceCtrl.modifyPractice
 );
 
-// DELETE
 router.delete(
   "/:id",
   auth,

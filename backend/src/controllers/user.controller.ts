@@ -2,7 +2,6 @@ import { Request, Response } from "express";
 import * as userService from "../services/user";
 
 
-
 export const signup = async (req: Request, res: Response) => {
   try {
     const result = await userService.signup(req.body);
