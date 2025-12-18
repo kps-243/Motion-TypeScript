@@ -1,10 +1,13 @@
 import express, { Request, Response, NextFunction } from "express";
 import userRoutes from "./routes/user.routes";
+import gymRoutes from "./routes/gym.routes";
+import gymEquipmentRoutes from "./routes/gymEquipment.routes";
 
 const app = express();
 
 app.use(express.json());
 
+// CORS
 app.use((req: Request, res: Response, next: NextFunction) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader(
@@ -18,6 +21,11 @@ app.use((req: Request, res: Response, next: NextFunction) => {
   next();
 });
 
+// Routes
 app.use("/api/auth", userRoutes);
+app.use("/api/gyms", gymRoutes);
+
+// GymEquipment (nested)
+app.use("/api/gyms/:gymId/equipments", gymEquipmentRoutes);
 
 export default app;
