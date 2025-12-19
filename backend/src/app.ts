@@ -1,3 +1,4 @@
+// app.ts
 import express, { Request, Response, NextFunction } from "express";
 
 import userRoutes from "./routes/user.routes";
@@ -8,6 +9,7 @@ import challengeRoutes from "./routes/challenge.routes";
 import equipmentRoutes from "./routes/equipment.routes";
 import badgeRoutes from "./routes/badge.routes";
 import leaderboardRoutes from "./routes/leaderboard.routes";
+import challengeInvite from "./routes/challengeInvite.routes";
 
 const app = express();
 
@@ -30,23 +32,12 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 // Routes
 app.use("/api/auth", userRoutes);
 app.use("/api/gyms", gymRoutes);
-
-// GymEquipment (nested)
 app.use("/api/gyms/:gymId/equipments", gymEquipmentRoutes);
-
-// Practices
 app.use("/api/practices", practiceRoutes);
-
-// Challenges
 app.use("/api/challenges", challengeRoutes);
-
-// Equipments
 app.use("/api/equipments", equipmentRoutes);
-
-// Badges
 app.use("/api/badges", badgeRoutes);
-
-// Leaderboard
 app.use("/api/leaderboard", leaderboardRoutes);
+app.use("/api", challengeInvite);
 
 export default app;
