@@ -422,6 +422,7 @@ Afficher le classement des utilisateurs par score.
 ## 🚀 Lancement du projet
 
 ```bash
+cd backend
 npm install
 npm run dev
 ```
